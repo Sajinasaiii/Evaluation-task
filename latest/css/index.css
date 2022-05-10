@@ -1,0 +1,45 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.time-first
+{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 150px;
+    /* margin-top: 30px; */
+}
+.time
+{
+    margin-top: 10px;
+    /* padding-top: 50px; */
+}
+.schedule
+{
+    color: rgb(199, 194, 194);
+    font-size: 15px;
+}
+.container
+{
+    margin-top: 20px;
+}
+.container-first
+{
+    height:600px;
+    border: 1px solid black;
+    width: 93%;
+    margin-left: 4%;
+}
+.top 
+{
+    background-color: #e1ecf4;
+    width: 60%;
+    margin-left: 13%;
+}
+.set
+{
+    margin-left: 20%;
+}
+
