@@ -1,17 +1,17 @@
 var data = [{
-    start: 8.00,
+    start: 0,
     duration: 15,
     title: "Exercise"
 }, {
-    start: 8.25,
+    start: 25,
     duration: 30,
     title: "Travel to work"
 }, {
-    start: 8.30,
+    start: 30,
     duration: 30,
     title: "Plan day"
 }, {
-    start: 9.00,
+    start: 60,
     duration: 15,
     title: "Review yesterday's commits"
 }, {
@@ -36,6 +36,23 @@ var data = [{
     title: "Push up branch"
 }
 ];
+
+    var tag = document.createElement("div");
+    tag.setAttribute('new','set');
+    var text = document.createTextNode("");
+    tag.appendChild(text);
+    var element = document.getElementById("first");
+    element.appendChild(tag);
+
+    var tag = document.createElement("div");
+    tag.setAttribute('new1','set');
+    var text = document.createTextNode("");
+    tag.appendChild(text);
+    var element = document.getElementById("new1");
+    element.appendChild(tag);
+
+
+
 console.log(typeof data);
 console.log(data);
 
@@ -58,3 +75,37 @@ for (var i = h; i <= 24; i++) {
     }
 }
 console.log(timeArray);
+
+   
+for(i=0;i<1;i++)
+{
+   var tag = document.createElement("p");
+   var text = document.createTextNode("Excercise");
+   tag.appendChild(text);
+   var element = document.getElementById("new");
+   element.appendChild(tag);
+}
+for(i=0;i<1;i++)
+{
+   var tag = document.createElement("p");
+   var text = document.createTextNode("Plan day");
+   tag.appendChild(text);
+   var element = document.getElementById("new");
+   element.appendChild(tag);
+}
+for(i=0;i<1;i++)
+{
+   var tag = document.createElement("p");
+   var text = document.createTextNode("Review yesterday's commit");
+   tag.appendChild(text);
+   var element = document.getElementById("new");
+   element.appendChild(tag);
+}
+for(i=0;i<1;i++)
+{
+   var tag = document.createElement("p");
+   var text = document.createTextNode("Code review");
+   tag.appendChild(text);
+   var element = document.getElementById("new");
+   element.appendChild(tag);
+}
