@@ -117,7 +117,7 @@ for(var key in data)
     
     for(var subkey in data[key])
     {  
-        console.log(data[key][subkey]);
+        // console.log(data[key][subkey]);
         if(data[key][subkey]==0)
         {
             document.getElementById("example1").innerHTML = "8:00";
@@ -129,17 +129,22 @@ for(var key in data)
         {
             document.getElementById("example4").innerHTML = "8:30";
             let content= document.getElementById("example5");
-            content.innerHTML="Travel to work";
+            content.innerHTML="Plan day";
             content.classList.add("color");
         }
-        // if(data[key][subkey]==30)
-        // {
-        //     document.getElementById("example3").innerHTML = "8:30";
-        //     let content= document.getElementById("example3");
-        //     content.innerHTML="Review yesterday's commit";
-        //     content.classList.add("color");
-        // }
-
-
+        if(data[key][subkey]==30)
+        {
+            document.getElementById("example3").innerHTML = "9:00";
+            let content= document.getElementById("example6");
+            content.innerHTML="Review yesterday's commit";
+            content.classList.add("color");
+        }
+        if(data[key][subkey]==60)
+        {
+            document.getElementById("example7").innerHTML = "9:30";
+            let content= document.getElementById("example8");
+            content.innerHTML="Code review";
+            content.classList.add("color");
+        }
     }
 }
