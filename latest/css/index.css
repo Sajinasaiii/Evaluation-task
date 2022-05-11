@@ -42,4 +42,46 @@
 {
     margin-left: 20%;
 }
+/* .container-first
+{
+    margin-left:5%;
+    height:600px;
+    width:93%;
+    border:1px solid black;
+    display: flex;
+    flex-direction:row;
+} */
+.color
+{
+    background-color: #e1ecf4;
+    font-size:11px;
+}
+#mainfirst
+{
+    /* flex:2%; */
+    /* display: flex; */
+    /* flex-direction:column; */
+    font-size:12px; 
+    margin-top: 15px;
+}
+.flex
+{
+    display: flex;
+}
+#mainsecond
+{
+    /* flex:98%;    */
+}
+#example1
+{
+    color: rgb(199, 194, 194);
+    margin-left: 10%;
+    
+}
+#example2
+{
+    /* background-color: red; */
+    font-size: 15px;
+    width: 80%;
+}
 
