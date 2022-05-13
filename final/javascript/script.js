@@ -110,32 +110,45 @@ var data = [{
 ];
 $(".time-title").html("<b>Time Schedule</b>");
 $(".time-time").html("8:00 am-6:00 pm");
-var z=getTimeArray(); 
-for(i=0;i<z.length;i++)
-{
+var z = getTimeArray();
+for (i = 0; i < z.length; i++) {
     $("#container1").append(`<div style="height:30px">${z[i]}</div>`);
 }
-function getTimeArray()
-{
-    var x = 30; 
-    var times = []; 
-    var tt = 60*8; 
-    for (var i=0;tt<19*60; i++) {
-    var hh = Math.floor(tt/60);
-    var mm = (tt%60);
-    times[i] = ("" + (hh % 12)).slice(-2) + ':' + ("0" + mm).slice(-2);
-    tt = tt + x;
+function getTimeArray() {
+    var x = 30;
+    var times = [];
+    var tt = 60 * 8;
+    for (var i = 0; tt < 19 * 60; i++) {
+        var hh = Math.floor(tt / 60);
+        var mm = (tt % 60);
+        times[i] = ("" + (hh % 12)).slice(-2) + ':' + ("0" + mm).slice(-2);
+        tt = tt + x;
     }
     return times;
 }
-$(".container1").append(`
-<div class="color" 
-style="height:
-${data[i].duration}px;margin-top:
-${diff}px"; >
-${data[i].title}"
-</div>
+// for(i=0;i<data.length;i++){
+// var value=0;
+// if{
+//     tempValue =data[i].start-(data[i-1].start+ data[i-1].duration);
+// }
+// $(".container1").append(`
+// <div class="color
+// style="height:
+// ${data[i].duration}px;margin-top:
+// ${value}px"; >
+// ${data[i].title}"
+
+// </div>
+// `)
+// }
+var value=0;
+for (let i = 0; i < data.length; i++) {
+    $("#container2").append(`
+    <div class="color">
+    ${data[i].title}
+    </div>
 `)
+}
 // $('#container1').append(
 // <div class="color" style="${height}">${data[i].title}</div>
 // );
@@ -161,8 +174,8 @@ ${data[i].title}"
 // dp.startDate = "2022-03-25";
 // dp.viewType = "Week";
 // dp.weekStart = 0;
-// var start = dp.visibleStart(); 
-// var end = dp.visibleEnd(); 
+// var start = dp.visibleStart();
+// var end = dp.visibleEnd();
 // dp.init();
 // $.each(data, function(i, item) {
 //     alert(item.start)
