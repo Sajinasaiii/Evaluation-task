@@ -128,17 +128,42 @@ function getTimeArray()
     }
     return times;
 }
-// $('#container1').append(   `<div>
-//          ${item.title}
-//      </div>`
+$(".container1").append(`
+<div class="color" 
+style="height:
+${data[i].duration}px;margin-top:
+${diff}px"; >
+${data[i].title}"
+</div>
+`)
+// $('#container1').append(
+// <div class="color" style="${height}">${data[i].title}</div>
 // );
+// let height = "height:"+ (data[i].duration)*2+"px";
+
+
+// let sample = 0;
+// if(data[i].start == 0){
+    // $("#tasks").append(`
+    //     <div class="fs-13 bodyBackgrounColor borderColor" style="${height}">${data[i].title}</div>
+    //  `);
+
 // document.getElementById('time-title').innerHTML="Time schedule";
 // document.getElementById('container1').innerHTML=data.map(item =>
 //     `<div>
-//         ${item.title}
+//         <div>${item.title}</div>
 //     </div>`
 // ).join('')
 // container2.classList.add("color");
+
+// var dp = new DayPilot.Calendar("container1");
+// dp.viewType = "Day";
+// dp.startDate = "2022-03-25";
+// dp.viewType = "Week";
+// dp.weekStart = 0;
+// var start = dp.visibleStart(); 
+// var end = dp.visibleEnd(); 
+// dp.init();
 // $.each(data, function(i, item) {
 //     alert(item.start)
 //   });
