@@ -38,9 +38,9 @@ var data = [{
 ];
 $(".time-title").html("<b>Time Schedule</b>");
 $(".time-time").html("8:00 am-6:00 pm");
-var z = getTimeArray();
-for (i = 0; i < z.length; i++) {
-    $("#container1").append(`<div style="height:30px">${z[i]}</div>`);
+var newtime = getTimeArray();
+for (i = 0; i < newtime.length; i++) {
+    $("#container1").append(`<div style="height:30px">${newtime[i]}</div>`);
 }
 function getTimeArray() {
     var x = 30;
@@ -50,6 +50,11 @@ function getTimeArray() {
         var hh = Math.floor(tt / 60);
         var mm = (tt % 60);
         times[i] = ("" + (hh % 12)).slice(-2) + ':' + ("0" + mm).slice(-2);
+        if (times[i] == "0:00") {
+            times[i] = "12:00";
+        } else if (times[i] == "0:30") {
+            times[i] = "12:30";
+        }
         tt = tt + x;
     }
     return times;
@@ -59,7 +64,7 @@ for (let i = 0; i < data.length; i++) {
     var nextGap = data[i + 1].start - (data[i].start + data[i].duration);
     if (nextGap >= 0) {
         var mBottom = nextGap;
-        var width = '100% ';
+        var width = '100%';
         var mLeft = '0%';
     } else {
         mBottom = '0';
@@ -67,21 +72,11 @@ for (let i = 0; i < data.length; i++) {
         mLeft = '50%';
     }
     $("#container2").append(`
-    <div class="color" style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft}">
+    <div class="color" style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};position:absolute;top:${data[i].start}px">
     ${data[i].title}
     </div>
 `)
 }
-// if(times[i]=="0:00"){
-//     times[i]=="12:00";
-// }
-// elseif(times[i]=="0:30"){
-//     times[i]=="12:30";
-// }
-// else{
-//     tt=tt+x;
-// }
-// }
 
 
 
