@@ -61,7 +61,12 @@ function getTimeArray() {
 }
 var value = 0;
 for (let i = 0; i < data.length; i++) {
-    var nextGap = data[i + 1].start - (data[i].start + data[i].duration);
+    if (i == data.length - 1) {
+        var nextGap = data[i].start - (data[i - 1].start + data[i - 1].duration);
+    } else {
+        nextGap = data[i + 1].start - (data[i].start + data[i].duration);
+    }
+    // var nextGap = data[i + 1].start - (data[i].start + data[i].duration);
     if (nextGap >= 0) {
         var mBottom = nextGap;
         var width = '100%';
@@ -70,6 +75,9 @@ for (let i = 0; i < data.length; i++) {
         mBottom = '0';
         width = '50%';
         mLeft = '50%';
+    }
+    if(i==data.length-2){
+        var mLeft = '0%';
     }
     $("#container2").append(`
     <div class="color" style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};position:absolute;top:${data[i].start}px">
