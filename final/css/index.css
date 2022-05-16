@@ -63,8 +63,11 @@ body
     flex:2%;
     /* display: flex; */
     flex-direction:column;
-    font-size:12px; 
     color: rgb(187, 181, 181);
+    position: absolute;
+    width: 90%;
+    height: 600px;
+    z-index: 1;
 }
 #container2
 {
@@ -73,6 +76,7 @@ body
     flex-direction:column;
     font-size:12px; */
     position: relative;
+    margin-left:3%;
 }
 .height
 {
@@ -83,4 +87,23 @@ body
     font-size: 12px;
     color: rgb(199, 194, 194);
 }
+.plan
+{
+    z-index:1;
+    position:absolute;
+    margin-left:50%;
+}
+.time-array
+{
+    height:30px;
+}
+.border
+{
 
+    font-size:12px;
+    border-top:1px solid rgb(230, 228, 228);
+}
+.font
+{
+    font-size:10px;
+}
