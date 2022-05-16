@@ -42,16 +42,13 @@ var newtime = getTimeArray();
 // for (i = 0; i < newtime.length; i++) {
 //     $("#container1").append(`<div style="height:30px">${newtime[i]}</div>`);
 // }
-for(i=0;i<newtime.length;i++)
-{
-    if(newtime.indexOf(newtime[i])%2==0)
-    {
+for (i = 0; i < newtime.length; i++) {
+    if (newtime.indexOf(newtime[i]) % 2 == 0) {
         $("#container1").append(`<div class="border time-array" >${newtime[i]}</div>`);
     }
-    else
-    {
+    else {
         $("#container1").append(`<div class="font time-array">${newtime[i]}</div>`);
-    } 
+    }
 }
 function getTimeArray() {
     var x = 30;
@@ -75,11 +72,7 @@ for (let i = 0; i < data.length; i++) {
     if (i == data.length - 1) {
         var nextGap = data[i].start - (data[i - 1].start + data[i - 1].duration);
     }
-    // else if(i<=data.length)
-    // {
-    //     var nextGap = data[i].start - (data[i - 1].start + data[i - 1].duration);
-    // }
-     else {
+    else {
         nextGap = data[i + 1].start - (data[i].start + data[i].duration);
     }
     // var nextGap = data[i + 1].start - (data[i].start + data[i].duration);
@@ -92,26 +85,24 @@ for (let i = 0; i < data.length; i++) {
         width = '50%';
         mLeft = '50%';
     }
-    if(i==data.length-2){
+    if (i == data.length - 2) {
         var mLeft = '0%';
     }
-    
-    if(data[i].title=="Plan day")
-    {
-        width="50%";
+    if (data[i].title == "Plan day") {
+        width = '50%';
         $("#container2").append(`
         <div class="color plan"style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};top:${data[i].start}px"">
         ${data[i].title}
         </div>
     `)
     }
-    else{
-    $("#container2").append(`
-    <div class="color" style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};position:absolute;top:${data[i].start}px">
-    ${data[i].title}
-    </div>
-`)
-}
+    else {
+        $("#container2").append(`
+        <div class="color" style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};position:absolute;top:${data[i].start}px">
+        ${data[i].title}
+        </div>
+        `)
+    }
 }
 
 
