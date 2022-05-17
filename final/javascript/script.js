@@ -80,7 +80,8 @@ for (let i = 0; i < data.length; i++) {
         var mBottom = nextGap;
         var width = '100%';
         var mLeft = '0%';
-    } else {
+    }
+    else {
         mBottom = '0';
         width = '50%';
         mLeft = '50%';
@@ -88,21 +89,33 @@ for (let i = 0; i < data.length; i++) {
     if (i == data.length - 2) {
         var mLeft = '0%';
     }
-    if (data[i].title == "Plan day") {
+    if (prevGap <= 0) {
         width = '50%';
-        $("#container2").append(`
-        <div class="color plan"style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};top:${data[i].start}px"">
-        ${data[i].title}
-        </div>
-    `)
     }
-    else {
-        $("#container2").append(`
+    if (nextGap > 0) {
+        width = '100%';
+    }
+    // if (data[i].title == "Plan day") {
+    //     // width = '50%';
+    //     $("#container2").append(`
+    //     <div class="color plan"style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};top:${data[i].start}px"">
+    //     ${data[i].title}
+    //     </div>
+    // `)
+    // }
+    // else {
+    //     $("#container2").append(`
+    //     <div class="color" style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};position:absolute;top:${data[i].start}px">
+    //     ${data[i].title}
+    //     </div>
+    //     `)
+    // }
+    $("#container2").append(`
         <div class="color" style="height:${data[i].duration}px;margin-bottom:${mBottom}px;width:${width};margin-left:${mLeft};position:absolute;top:${data[i].start}px">
         ${data[i].title}
         </div>
         `)
-    }
+    var prevGap = nextGap;
 }
 
 
@@ -125,3 +138,4 @@ for (let i = 0; i < data.length; i++) {
 // var start = dp.visibleStart();
 // var end = dp.visibleEnd();
 // dp.init();
+
